@@ -1,0 +1,44 @@
+{
+  "name": "@x402/stacks",
+  "version": "1.0.0",
+  "description": "Stacks blockchain support for x402 payments. Verify sBTC, STX, and USDCx transactions.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "test": "bun test",
+    "lint": "eslint src/",
+    "prepublishOnly": "bun run build"
+  },
+  "keywords": ["x402", "stacks", "sbtc", "bitcoin", "payments", "micropayments", "ai-agents"],
+  "author": "x402 Stacks Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/x402-stacks/x402-stacks"
+  },
+  "dependencies": {
+    "@stacks/transactions": "^6.13.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "@x402/core": ">=0.1.0"
+  },
+  "peerDependenciesMeta": {
+    "@x402/core": {
+      "optional": true
+    }
+  }
+}
